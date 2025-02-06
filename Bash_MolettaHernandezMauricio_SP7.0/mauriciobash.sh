@@ -26,7 +26,7 @@ mostrar_menu() {
   echo "18. quita_blancos"
   echo "19. lineas"
   echo "20. analizar"
-  echo "21. Salir"
+  echo "0. Salir"
   echo "==============================="
 }
 
@@ -614,10 +614,10 @@ sleep 4
 
 
 
-opcion=0
-while [ "$opcion" -ne 21 ]; do
+opcion=1
+while [ "$opcion" -ne 0 ]; do
   mostrar_menu
-  read -p "Elige una opción [1-21]: " opcion
+  read -p "Elige una opción [0-20]: " opcion
   if [[ "$opcion" =~ ^[0-9]+$ ]]; then
 case $opcion in
 
@@ -713,11 +713,11 @@ case $opcion in
 
 
 
-    21) echo "Saliendo del programa..." ;;
-    *) echo "Opción no válida, por favor elige una opción del 1 al 21." ;;
+    0) echo "Saliendo del programa..." ;;
+    *) echo "Opción no válida, por favor elige una opción del 0 al 20." ;;
   esac
 else
-	opcion=0
+	opcion=1
 	echo "Error: Por favor introduce un valor numerico válido"
 fi
 done
